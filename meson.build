@@ -6,10 +6,10 @@ add_project_arguments('-DPLATFORM_' + get_option('raylib_platform'),
   language: 'c'
 )
 
-glfw3_inc = include_directories('raylib/src/extrernal/glfw/src')
+glfw3_inc = include_directories('raylib/src/external/glfw/src')
 
 glfw3_src = [
-  'raylib/src/extrernal/glfw/src/*.c'
+  'raylib/src/external/glfw/src/*.c'
 ]
 
 glfw3_lib = static_library('glfw3',
