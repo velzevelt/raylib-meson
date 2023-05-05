@@ -6,9 +6,21 @@ add_project_arguments('-DPLATFORM_' + get_option('raylib_platform'),
   language: 'c'
 )
 
-glfw_dep = dependency('glfw3')
+glfw3_inc = include_directories('raylib/src/extrernal/glfw/src')
 
-raylib_sources = [
+glfw3_src = [
+  'raylib/src/extrernal/glfw/src/*.c'
+]
+
+glfw3_lib = static_library('raylib',
+  glfw3_src,
+  include_directories: raylib_inc
+)
+
+glfw_dep = glfw3_lib
+
+
+raylib_src = [
   'raylib/src/raudio.c',
   'raylib/src/rcore.c',
   'raylib/src/rmodels.c',
@@ -21,7 +33,7 @@ raylib_sources = [
 raylib_inc = include_directories('raylib/src')
 
 raylib_lib = static_library('raylib',
-  raylib_sources,
+  raylib_src,
   dependencies: glfw_dep,
   include_directories: raylib_inc
 )
