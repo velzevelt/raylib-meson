@@ -12,9 +12,9 @@ glfw3_src = [
   'raylib/src/extrernal/glfw/src/*.c'
 ]
 
-glfw3_lib = static_library('raylib',
+glfw3_lib = static_library('glfw3',
   glfw3_src,
-  include_directories: raylib_inc
+  include_directories: glfw3_inc 
 )
 
 glfw_dep = glfw3_lib
