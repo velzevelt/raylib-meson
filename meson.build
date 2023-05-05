@@ -9,7 +9,7 @@ add_project_arguments('-DPLATFORM_' + get_option('raylib_platform'),
 glfw3_inc = include_directories('raylib/src/external/glfw/src')
 
 glfw3_src = [
-  'raylib/src/external/glfw/src/*.c'
+  'raylib/src/external/glfw/src/CMakeLists.txt'
 ]
 
 glfw3_lib = static_library('glfw3',
