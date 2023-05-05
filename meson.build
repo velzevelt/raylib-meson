@@ -17,7 +17,10 @@ glfw3_lib = static_library('glfw3',
   include_directories: glfw3_inc 
 )
 
-glfw_dep = glfw3_lib
+glfw_dep = declare_dependency(
+  include_directories: glfw3_inc,
+  link_with: glfw3_lib
+)
 
 
 raylib_src = [
